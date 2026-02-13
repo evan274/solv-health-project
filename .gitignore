@@ -1,0 +1,7 @@
+# Ignore everything by default
+*
+
+# But track these Solv Health project files
+!.gitignore
+!solv-*.html
+!solv-*.md

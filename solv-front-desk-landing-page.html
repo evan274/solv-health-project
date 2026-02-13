@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Drowning in Calls. Let AI Manage Your Queue | Solv Smart Queue</title>
+    <meta name="description" content="Save 10+ hours per week with AI-powered queue management. Let patients book themselves while you focus on care, not chaos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #5B47FB;
+        }
+
+        .cta-button {
+            background: #5B47FB;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #4A38CA;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(91, 71, 251, 0.3);
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #5B47FB;
+            border: 2px solid #5B47FB;
+        }
+
+        .cta-button-secondary:hover {
+            background: #f7f5ff;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero-highlight {
+            color: #ffd93d;
+            text-decoration: underline;
+            text-decoration-color: #ffd93d;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            color: #ffd93d;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 5rem 2rem;
+            background: #f7fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #718096;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pain-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 4px solid #e53e3e;
+        }
+
+        .pain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .pain-card p {
+            color: #4a5568;
+            font-size: 1.05rem;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .solution-grid {
+            max-width: 1200px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .solution-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .solution-card p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .time-saved {
+            background: #ffd93d;
+            color: #2d3748;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Before/After Section */
+        .before-after {
+            padding: 5rem 2rem;
+            background: #1a202c;
+            color: white;
+        }
+
+        .comparison {
+            max-width: 1100px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .before, .after {
+            padding: 2.5rem;
+            border-radius: 16px;
+        }
+
+        .before {
+            background: rgba(229, 62, 62, 0.15);
+            border: 2px solid #fc8181;
+        }
+
+        .after {
+            background: rgba(72, 187, 120, 0.15);
+            border: 2px solid #68d391;
+        }
+
+        .comparison h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .comparison ul {
+            list-style: none;
+            font-size: 1.15rem;
+        }
+
+        .comparison li {
+            margin-bottom: 1.25rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .comparison li:before {
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        .before li:before {
+            content: "❌";
+        }
+
+        .after li:before {
+            content: "✅";
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #f7fafc;
+        }
+
+        .testimonial-container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.35rem;
+            font-style: italic;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            font-size: 1.25rem;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: #718096;
+            font-size: 1rem;
+        }
+
+        /* ROI Calculator Section */
+        .roi-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .roi-calculator {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .roi-stat {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .roi-stat h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .roi-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #ffd93d;
+            display: block;
+        }
+
+        .roi-subtext {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        .roi-breakdown {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .roi-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+        }
+
+        .roi-item-label {
+            opacity: 0.9;
+        }
+
+        .roi-item-value {
+            font-weight: 700;
+            color: #ffd93d;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 5rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .final-cta p {
+            font-size: 1.5rem;
+            color: #718096;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button-large {
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-button-large {
+                width: 100%;
+            }
+        }
+
+        /* Floating Badge */
+        .floating-badge {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #10b981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            font-weight: 700;
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-badge">
+        ⚡ Save 10+ hrs/week
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">Solv Health</div>
+            <a href="#demo" class="cta-button">Request Demo</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Stop Drowning in Calls.<br>
+                <span class="hero-highlight">Let AI Manage Your Queue.</span>
+            </h1>
+            <p>
+                Finally, a system that works as hard as you do. Patients book themselves, queues organize automatically, and you get your time back.
+            </p>
+            <a href="#demo" class="cta-button cta-button-large">See It In Action</a>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Hours Saved Per Week</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-label">Less Time Scheduling</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">90%</span>
+                    <span class="stat-label">Fewer Complaints</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain-points">
+        <h2 class="section-title">Sound Familiar?</h2>
+        <p class="section-subtitle">You're not alone. Front desk staff everywhere are buried in the same chaos.</p>
+
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-icon">📞</div>
+                <h3>Phones Never Stop Ringing</h3>
+                <p>30-50 calls per day just for scheduling. Every ring interrupts patient check-ins, and you're the one apologizing for long hold times.</p>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">📧</div>
+                <h3>Morning Voicemail Nightmare</h3>
+                <p>20-30 messages waiting when you arrive. You spend the first 2 hours just returning calls instead of preparing for the day.</p>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">😤</div>
+                <h3>Angry Patients, Every Day</h3>
+                <p>"You said 20 minutes, I've been here an hour!" You're caught between patients and providers with no good answers.</p>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">📝</div>
+                <h3>Endless Paperwork</h3>
+                <p>Same questions, same forms, different patient. Then typing it all into the system again. Why can't they just do it themselves?</p>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">🤹</div>
+                <h3>Juggling Walk-ins vs Appointments</h3>
+                <p>Who goes first? The walk-in who's been waiting? Or the appointment who's technically "on time"? Someone's unhappy either way.</p>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">🏃</div>
+                <h3>Never Leaving On Time</h3>
+                <p>Confirming tomorrow's appointments, entering patient data, calling no-shows. The work never ends, even when your shift does.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <h2 class="section-title">What If Your Job Got Easier?</h2>
+        <p class="section-subtitle">Solv Smart Queue uses AI to automate everything you hate about front desk work.</p>
+
+        <div class="solution-grid">
+            <div class="solution-card">
+                <span class="solution-icon">🤖</span>
+                <h3>Online Self-Scheduling</h3>
+                <p>Patients book themselves 24/7 through the Solv app. No phone calls, no back-and-forth, no interruptions. They pick their time, fill out forms at home, and show up ready.</p>
+                <span class="time-saved">Saves 8-10 hrs/week</span>
+            </div>
+
+            <div class="solution-card">
+                <span class="solution-icon">📲</span>
+                <h3>Digital Check-In</h3>
+                <p>Patients complete registration on their phone before arrival. No clipboards, no data entry, no asking the same questions twice. They check in with one tap.</p>
+                <span class="time-saved">Saves 2-3 hrs/week</span>
+            </div>
+
+            <div class="solution-card">
+                <span class="solution-icon">🎯</span>
+                <h3>AI Queue Management</h3>
+                <p>The system automatically prioritizes patients, balances walk-ins with appointments, and gives accurate wait times. No more guessing or difficult decisions.</p>
+                <span class="time-saved">90% fewer complaints</span>
+            </div>
+
+            <div class="solution-card">
+                <span class="solution-icon">⏰</span>
+                <h3>Automated Reminders</h3>
+                <p>Patients get automatic text reminders 2 hours before their appointment. They can confirm or reschedule with one tap. No-shows drop by 40%.</p>
+                <span class="time-saved">40% fewer no-shows</span>
+            </div>
+
+            <div class="solution-card">
+                <span class="solution-icon">📊</span>
+                <h3>Smart Wait Times</h3>
+                <p>AI predicts actual wait times within 10 minutes. Patients see it before booking and get updates if things change. No more angry surprises.</p>
+                <span class="time-saved">Happier patients</span>
+            </div>
+
+            <div class="solution-card">
+                <span class="solution-icon">🌙</span>
+                <h3>After-Hours Booking</h3>
+                <p>Patients book at 10pm, on weekends, whenever. No voicemails, no morning backlog. They schedule themselves when it's convenient for them.</p>
+                <span class="time-saved">Zero morning backlog</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h2 class="section-title">Your Day: Before vs. After</h2>
+
+        <div class="comparison">
+            <div class="before">
+                <h3>😫 Without Solv Smart Queue</h3>
+                <ul>
+                    <li>Arrive to 25 voicemails</li>
+                    <li>Spend 2 hours returning calls</li>
+                    <li>Phone rings every 3 minutes</li>
+                    <li>Hand patients clipboards</li>
+                    <li>Type their info into system</li>
+                    <li>Field "how much longer?" questions</li>
+                    <li>Deal with angry wait time complaints</li>
+                    <li>Manually call to confirm appointments</li>
+                    <li>Stay late entering patient data</li>
+                    <li>Go home exhausted and frustrated</li>
+                </ul>
+            </div>
+
+            <div class="after">
+                <h3>😊 With Solv Smart Queue</h3>
+                <ul>
+                    <li>Arrive to inbox of self-bookings</li>
+                    <li>Quick morning prep (20 mins)</li>
+                    <li>Phone only rings occasionally</li>
+                    <li>Patients arrive pre-registered</li>
+                    <li>One-click to confirm their info</li>
+                    <li>Patients check wait times on app</li>
+                    <li>Accurate predictions = happy patients</li>
+                    <li>Automatic reminders sent</li>
+                    <li>Leave on time, no backlog</li>
+                    <li>Go home feeling accomplished</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">What Front Desk Teams Say</h2>
+        <p class="section-subtitle">Real feedback from coordinators who were skeptical at first.</p>
+
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "I was drowning. 40+ calls a day, constant interruptions, patients complaining about wait times. Now? Patients book themselves online, I spend maybe 30 minutes on the phone total, and I actually leave on time. This changed my job completely."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <h4>Maria Rodriguez</h4>
+                        <p>Front Desk Coordinator, Austin Family Urgent Care</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "The morning voicemail backlog was killing me. 20-30 messages every single day. Now patients book after-hours on their own. I come in, the schedule is full, and I can actually focus on the patients in front of me instead of being glued to the phone."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">T</div>
+                    <div class="author-info">
+                        <h4>Tiffany Chen</h4>
+                        <p>Patient Services Lead, Phoenix Urgent Care Center</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "I used to dread Mondays because the wait times were always unpredictable. Patients would get mad at ME even though I had no control. Now the AI handles the queue, gives accurate times, and sends updates. Complaints dropped like 90%. My stress level is so much lower."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">J</div>
+                    <div class="author-info">
+                        <h4>Jessica Martinez</h4>
+                        <p>Front Desk Coordinator, Denver Quick Care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roi-section">
+        <h2 class="section-title">Your Time Is Worth Something</h2>
+        <p class="section-subtitle">Here's what you get back every single week.</p>
+
+        <div class="roi-calculator">
+            <div class="roi-stat">
+                <h3>Time Saved Per Week</h3>
+                <span class="roi-number">10+</span>
+                <p class="roi-subtext">Hours returned to actual patient care</p>
+            </div>
+
+            <div class="roi-breakdown">
+                <div class="roi-item">
+                    <span class="roi-item-label">Phone scheduling eliminated</span>
+                    <span class="roi-item-value">8 hours</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-item-label">Morning voicemail cleared</span>
+                    <span class="roi-item-value">1.5 hours</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-item-label">Digital check-in (no data entry)</span>
+                    <span class="roi-item-value">2 hours</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-item-label">No manual confirmations</span>
+                    <span class="roi-item-value">1 hour</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="demo">
+        <h2>Ready to Get Your Time Back?</h2>
+        <p>See how Solv Smart Queue can transform your workday. No commitment, just a demo.</p>
+
+        <div class="cta-buttons">
+            <a href="https://www.solvhealth.com/for-providers" class="cta-button cta-button-large">Request a Demo</a>
+            <a href="https://www.solvhealth.com/for-providers" class="cta-button cta-button-secondary cta-button-large">Talk to Our Team</a>
+        </div>
+
+        <p style="margin-top: 2rem; color: #a0aec0; font-size: 1rem;">
+            ✓ 15-minute demo &nbsp;&nbsp; ✓ No sales pressure &nbsp;&nbsp; ✓ Setup in days, not months
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Solv Health. Making healthcare more convenient, one front desk at a time.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Support</a>
+            <a href="#">Careers</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Floating badge click to demo
+        document.querySelector('.floating-badge').addEventListener('click', function() {
+            document.querySelector('#demo').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    </script>
+</body>
+</html>
